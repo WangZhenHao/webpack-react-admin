@@ -4,6 +4,8 @@
 process.env.BABEL_ENV = 'production';
 process.env.NODE_ENV = 'production';
 
+const keyIndex = process.argv.findIndex(item => item === '--env');
+process.env.ENV_FILE_NAME = keyIndex > -1 ? process.argv[keyIndex + 1] : process.env.NODE_ENV;
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.

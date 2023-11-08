@@ -56,7 +56,7 @@ function getAdditionalModulePaths(options = {}) {
  */
 function getWebpackAliases(options = {}) {
   const baseUrl = options.baseUrl;
-
+  // console.log(options)
   if (!baseUrl) {
     return {};
   }
@@ -66,6 +66,14 @@ function getWebpackAliases(options = {}) {
   if (path.relative(paths.appPath, baseUrlResolved) === '') {
     return {
       src: paths.appSrc,
+      '@': path.resolve(__dirname, paths.appSrc),
+      '@css': path.resolve(__dirname, paths.appSrc, './assets/css'),
+      '@views':  path.resolve(__dirname, paths.appSrc, './views'),
+      '@router': path.resolve(__dirname, paths.appSrc, './router'),
+      '@js': path.resolve(__dirname, paths.appSrc, './assets/js'),
+      '@img': path.resolve(__dirname, paths.appSrc, './assets/img'),
+      '@api': path.resolve(__dirname, paths.appSrc, './api'),
+      '@store': path.resolve(__dirname, paths.appSrc, './store'),
     };
   }
 }
@@ -122,7 +130,7 @@ function getModules() {
   const options = config.compilerOptions || {};
 
   const additionalModulePaths = getAdditionalModulePaths(options);
-
+  // console.log(getWebpackAliases(options),)
   return {
     additionalModulePaths: additionalModulePaths,
     webpackAliases: getWebpackAliases(options),

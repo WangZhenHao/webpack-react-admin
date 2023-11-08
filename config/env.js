@@ -7,21 +7,22 @@ const paths = require('./paths');
 // Make sure that including paths.js after env.js will read .env variables.
 delete require.cache[require.resolve('./paths')];
 
-const NODE_ENV = process.env.NODE_ENV;
-if (!NODE_ENV) {
+const ENV_FILE_NAME = process.env.ENV_FILE_NAME;
+
+if (!ENV_FILE_NAME) {
   throw new Error(
-    'The NODE_ENV environment variable is required but was not specified.'
+    'The ENV_FILE_NAME environment variable is required but was not specified.'
   );
 }
 
 // https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use
 const dotenvFiles = [
-  `${paths.dotenv}.${NODE_ENV}.local`,
+  `${paths.dotenv}.${ENV_FILE_NAME}.local`,
   // Don't include `.env.local` for `test` environment
   // since normally you expect tests to produce the same
   // results for everyone
-  NODE_ENV !== 'test' && `${paths.dotenv}.local`,
-  `${paths.dotenv}.${NODE_ENV}`,
+  ENV_FILE_NAME !== 'test' && `${paths.dotenv}.local`,
+  `${paths.dotenv}.${ENV_FILE_NAME}`,
   paths.dotenv,
 ].filter(Boolean);
 
