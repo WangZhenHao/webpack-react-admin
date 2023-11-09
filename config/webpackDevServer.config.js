@@ -80,6 +80,7 @@ module.exports = function (proxy, allowedHost) {
       },
       overlay: {
         errors: true,
+        runtimeErrors: false,
         warnings: false,
       },
     },

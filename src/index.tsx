@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '@css/common.css'
+import '@js/globalFn';
+
 import './index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
-console.log(process.env.REACT_APP_API)
+console.log(process.env)
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

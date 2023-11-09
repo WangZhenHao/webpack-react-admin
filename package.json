@@ -70,7 +70,7 @@
   "scripts": {
     "dev": "node scripts/start.js --env development",
     "bate": "node scripts/start.js --env bate",
-    "build": "node scripts/build.js",
+    "build:prod": "node scripts/build.js",
     "build:dev": "node scripts/build.js --env development",
     "build:bate": "node scripts/build.js --env bate",
     "test": "node scripts/test.js"

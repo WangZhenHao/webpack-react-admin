@@ -1,0 +1,38 @@
+{
+    "code": 0,
+    "result": {
+        "toekn": "12134232",
+        "list": [
+            {
+                "id": "1",
+                "parentId": "0",
+                "sort": "2",
+                "path": "",
+                "name": "系统管理",
+                "icon": "Message"
+            },
+            {
+                "id": "2",
+                "parentId": "1",
+                "sort": "1",
+                "path": "/system/menuList",
+                "name": "菜单列表"
+            },
+            {
+                "id": "3",
+                "parentId": "1",
+                "sort": "1",
+                "path": "/system/roleList",
+                "name": "角色列表"
+            },
+            {
+                "id": "4",
+                "parentId": "0",
+                "icon": "Compass",
+                "path": "/overview",
+                "name": "概况",
+                "sort": "1"
+            }
+        ]
+    }
+}

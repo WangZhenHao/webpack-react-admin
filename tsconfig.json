@@ -19,6 +19,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "noImplicitThis": false,
     "baseUrl": "./",
     "paths": {
         "@/*": ["./src/*"],
@@ -27,8 +28,8 @@
         "@js/*": ["./src/assets/js/*"],
         "@css/*": ["./src/assets/css/*"],
         "@img/*": ["./src/assets/img/*"],
-        "@api/*": ["/src/api/*"],
-        "@store/*": ["src/store/*"]
+        "@api/*": ["./src/api/*"],
+        "@store/*": ["./src/store/*"]
     },
   },
   "include": [

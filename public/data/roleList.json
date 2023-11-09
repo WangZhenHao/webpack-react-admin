@@ -1,0 +1,71 @@
+{
+  "code": 0,
+  "page": {
+    "pageNum": 1,
+    "pageSize": 15,
+    "pages": 4,
+    "total": 51
+  },
+  "result": [
+    {
+      "code": "yyrl",
+      "description": "",
+      "id": "1",
+      "name": "巡店"
+    },
+    {
+      "code": "xdpp",
+      "description": "",
+      "id": "2",
+      "name": "巡店"
+    },
+    {
+      "code": "jhxj",
+      "description": "",
+      "id": "5",
+      "name": "管理员"
+    },
+    {
+      "code": "CP",
+      "description": "新入职产品的权限",
+      "id": "6",
+      "name": "入职产品"
+    },
+    {
+      "code": "YYZFGJ",
+      "description": "",
+      "id": "4",
+      "name": "运营"
+    },
+    {
+      "code": "YYFW",
+      "description": "",
+      "id": "65",
+      "name": "运营"
+    },
+    {
+      "code": "zb",
+      "description": "郑",
+      "id": "35",
+      "name": "查看战报"
+    },
+    {
+      "code": "XYJY",
+      "description": "",
+      "id": "ds",
+      "name": "学院"
+    },
+    {
+      "code": "YYBX",
+      "description": "",
+      "id": "2323",
+      "name": "运营"
+    },
+    {
+      "code": "YYZS",
+      "description": "",
+      "id": "343",
+      "name": "运营"
+    }
+  ]
+}

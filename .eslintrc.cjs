@@ -9,4 +9,9 @@ module.exports = {
             ],
         },
     },
+    rules: {},
+    globals: {
+        $tools: true
+    }
+   
 };
