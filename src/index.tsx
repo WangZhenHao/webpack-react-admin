@@ -4,7 +4,9 @@ import '@css/common.css'
 import '@js/globalFn';
 
 import './index.css';
-import App from './App';
+// import App from './App';
+import { RouterProvider } from "react-router-dom";
+import router from '@router/index'
 // import reportWebVitals from './reportWebVitals';
 
 console.log(process.env)
@@ -14,7 +16,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
