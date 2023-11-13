@@ -9,7 +9,9 @@ module.exports = {
             ],
         },
     },
-    rules: {},
+    rules: {
+        // "react-hooks/rules-of-hooks": "off"
+    },
     globals: {
         $tools: true
     }
