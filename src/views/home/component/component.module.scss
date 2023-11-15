@@ -1,0 +1,58 @@
+.headerWrap {
+    height: 70px;
+    background-color: #242f42;
+    color: #fff;
+    font-size: 22px;
+
+    .leftWrap {
+        margin-left: 30px;
+    }
+    .rightwrap {
+        margin-right: 50px;
+        cursor: pointer;
+    }
+    .imgblock {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+.silderWrap {
+    height: calc(100vh - 70px);
+    background: #324157;
+
+    transition: width 0.2s linear;
+    padding-bottom: 30px;
+    width: 200px;
+
+    &.with80 {
+        width: 80px;
+    }
+
+    .iconArrow {
+        width: 100%;
+        height: 30px;
+        left: 0;
+        bottom: 0;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        background: #242f42;
+    }
+
+    
+        :global {
+            .ant-menu-dark, .ant-menu-sub, .ant-menu-item-selected {
+                background: transparent !important;
+            }
+
+            .ant-menu-item-selected {
+                color: #20a0ff;
+            }
+             
+         }
+    
+    
+}
+

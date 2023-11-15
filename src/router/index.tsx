@@ -1,6 +1,7 @@
 import type { RouteObject  } from 'react-router-dom'
 import React, { Suspense } from "react";
 import { createHashRouter } from "react-router-dom";
+import { Spin } from 'antd'
 // const lazyLoad = (Component) => {
 //     return <Component />
 // }
@@ -11,7 +12,15 @@ const Login = React.lazy(() => import(`@views/login`));
 const Home = React.lazy(() => import(`@views/home`));
 
 const lazyLoad = (Component: React.LazyExoticComponent<any>): React.ReactNode => (
-    <Suspense fallback={<div>页面加载中...</div>}>
+    <Suspense fallback={<Spin
+        size="default"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '100%'
+        }}
+      />}>
       <Component />
     </Suspense>
   )

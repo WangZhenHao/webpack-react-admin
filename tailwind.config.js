@@ -20,6 +20,10 @@ module.exports = {
 
       extend: {
           spacing: {
+              '4px': '4px',
+              '5px': '5px',
+              '6px': '6px',
+              '8px': '8px',
               '10px': '10px',
               '20px': '20px',
               '30px': '30px',
