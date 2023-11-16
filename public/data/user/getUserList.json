@@ -7,7 +7,7 @@
       "sort": "2",
       "path": "",
       "name": "系统管理",
-      "icon": "Message"
+      "icon": "PieChartOutlined"
     },
     {
       "id": "2",
@@ -26,7 +26,7 @@
     {
       "id": "4",
       "parentId": "0",
-      "icon": "Compass",
+      "icon": "SlidersOutlined",
       "path": "/overview",
       "name": "概况",
       "sort": "1"

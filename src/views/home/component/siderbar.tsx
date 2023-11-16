@@ -3,6 +3,9 @@ import {
     RightOutlined,
 } from "@ant-design/icons";
 
+// import * as AllIcon from "@ant-design/icons"
+import Icon from '@/components/global/Icon'
+
 import style from "./component.module.scss";
 import type { MenuProps } from "antd";
 import { Layout, Menu, ConfigProvider } from "antd";
@@ -31,10 +34,12 @@ function getItem(
 function filterTreeList(list: any): any {
     const json = []
     for(let item of list) {
+        // const a = item.icon as keyof typeof AllIcon
+        // const Compoent = AllIcon[a]
         const detial = {
             label: item.name, 
             key: item.path, 
-            icon: '',
+            icon: item.icon ? <Icon icon={item.icon} /> : '',
             children: null
         }
         
@@ -55,7 +60,7 @@ export default function App() {
     
     const treeList = toMakeTree(JSON.parse(JSON.stringify(userInfo?.list!)), '0')
     
-    console.log(filterTreeList(treeList));
+    console.log(filterTreeList(treeList), treeList);
     // const items: MenuItem[] = [
     //     getItem("Option 1", "1", <PieChartOutlined />),
     //     getItem("Option 2", "2", <DesktopOutlined />),
