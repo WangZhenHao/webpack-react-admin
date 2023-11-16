@@ -1,21 +1,33 @@
 import { DownOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Dropdown } from "antd";
+import { Dropdown, Modal } from "antd";
 import admin from "@img/admin.png";
 
 import style from "./component.module.scss";
-
+import { loginOut } from '@store/user'
+import { useAppDispatch } from '@store/hooks'
+// import {  useDispatch } from "react-redux"
 
 
 export default function App() {
-    const loginOut = () => {
-        alert(1)
+    const dispatch = useAppDispatch()
+    const loginOutHandle = () => {
+        Modal.confirm({
+            okText: '确定',
+            cancelText: '取消',
+            okType: 'danger',
+            title: '确定退出登录嘛？',
+            onOk() {
+                dispatch(loginOut())
+            }
+        })
+        
     }
     const items: MenuProps["items"] = [
         {
             key: '1',
             label: (
-                <span className="text-center" onClick={loginOut}>退出登录</span>
+                <span className="text-center" onClick={loginOutHandle}>退出登录</span>
             )
         }
     ];

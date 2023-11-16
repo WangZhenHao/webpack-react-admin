@@ -36,7 +36,7 @@ export const login = createAsyncThunk(
     }
 );
 export const userSlice = createSlice({
-    name: "counter",
+    name: "user",
     initialState,
     reducers: {
         loginOut(state) {    
