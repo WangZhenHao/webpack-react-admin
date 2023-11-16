@@ -5,7 +5,10 @@ declare namespace $api.user {
         username: string;
         password: string;
     }
-
+    interface typeUserInfo {
+        id: string
+        name: string
+    }
     interface menuList {
         id: string;
         parentId: string;
@@ -18,8 +21,9 @@ declare namespace $api.user {
     interface ServiceResponse_List_AppMatrlApplyVo__ {
         /** 返回值/对象/列表 */
         result: {
-            list: Array<menuList>;
-            token: string;
+            list?: Array<menuList>;
+            token?: string;
+            userInfo?: typeUserInfo
         };
         /** 返回码 */
         retCode?: string;

@@ -1,9 +1,10 @@
-import { setLocalStorage, clearLocalStorage, getLocalStorage } from './utils';
+import { setLocalStorage, clearLocalStorage, getLocalStorage, clearAllLocalStorage } from './utils';
 
 const tools = {
     setLocalStorage: setLocalStorage,
     clearLocalStorage: clearLocalStorage,
     getLocalStorage: getLocalStorage,
+    clearAllLocalStorage
 } as const;
 
 export type typeTools = typeof tools;

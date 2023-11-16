@@ -161,10 +161,10 @@ export function setLocalStorage(
  * @param {[type]} key 	键		可填(默认清除所有)
  * @return {[type]} [description]
  */
-export function clearLocalStorage(key?: string): void {
-    if (key) {
-        localStorage.removeItem(key);
-    } else {
-        localStorage.clear();
-    }
+export function clearLocalStorage(key: string): void {
+    localStorage.removeItem(key);
+}
+
+export function clearAllLocalStorage() {
+    localStorage.clear();
 }

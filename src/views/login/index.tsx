@@ -2,20 +2,36 @@ import style from "./index.module.scss";
 import { Button, Form, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from 'react'
+import { useState } from "react";
+import { userLoginIn } from "@api/login";
+import { useAppDispatch } from "@store/hooks";
 
+import { login } from "@store/user";
 
-type FieldType = {
-    username?: string;
-    password?: string;
-};
+type typeLoginParmas = Parameters<typeof userLoginIn>[0];
+
 export default function Login() {
+    const [loadings, setLoadings] = useState(false);
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
-    const onFinish = (values: any) => {
-        console.log("Success:", values);
-        navigate('/')
-        
+    const onFinish = (values: typeLoginParmas) => {
+        setLoadings(true);
+        dispatch(
+            login({
+                params: values,
+                cb: () => {
+                    setLoadings(false);
+                },
+            })
+        );
+        // userLoginIn(values).then(res => {
+        //     console.log(res)
+        //     setTimeout(() => {
+        //         setLoadings(false)
+        //         // navigate('/')
+        //     }, 2000)
+        // })
     };
     const onFinishFailed = (errorInfo: any) => {
         console.log("Failed:", errorInfo);
@@ -38,7 +54,7 @@ export default function Login() {
                         onFinishFailed={onFinishFailed}
                         autoComplete="off"
                     >
-                        <Form.Item<FieldType>
+                        <Form.Item<typeLoginParmas>
                             name="username"
                             rules={[
                                 { required: true, message: "请输入用户名" },
@@ -51,7 +67,7 @@ export default function Login() {
                                 placeholder="用户名"
                             />
                         </Form.Item>
-                        <Form.Item<FieldType>
+                        <Form.Item<typeLoginParmas>
                             name="password"
                             rules={[{ required: true, message: "请输入密码" }]}
                         >
@@ -64,9 +80,10 @@ export default function Login() {
                         </Form.Item>
                         <Form.Item>
                             <Button
-                                style={{ width: "100%", height: '40px' }}
+                                style={{ width: "100%", height: "40px" }}
                                 type="primary"
                                 htmlType="submit"
+                                loading={loadings}
                             >
                                 登录
                             </Button>
