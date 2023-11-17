@@ -22,11 +22,21 @@ const lazyLoad = (
         <Component />
     </Suspense>
 );
-type typeRouter = RouteObject & {
-    name?: string;
-};
+
+
+
+  
 const Login = React.lazy(() => import(`@views/login`));
 const Home = React.lazy(() => import(`@views/home`));
+const Overview = React.lazy(() => import(`@views/overview`));
+const MenuList = React.lazy(() => import(`@views/system/menuList`));
+const RoleList = React.lazy(() => import(`@views/system/roleList`));
+
+
+type typeRouter = RouteObject & {
+    name?: string;
+    children?: typeRouter[]
+}
 
 const list: typeRouter[] = [
     {
@@ -37,6 +47,23 @@ const list: typeRouter[] = [
     {
         path: "/",
         element: lazyLoad(Home),
+        children: [
+            {
+                path: "/overview",
+                element: lazyLoad(Overview),
+                name: '概况'
+            },
+            {
+                path: "/system/menuList",
+                element: lazyLoad(MenuList),
+                name: '菜单列表'
+            },
+            {
+                path: "/system/roleList",
+                element: lazyLoad(RoleList),
+                name: '角色列表'
+            }
+        ]
     },
 ];
 

@@ -1,35 +1,35 @@
-import {
-    LeftOutlined,
-    RightOutlined,
-} from "@ant-design/icons";
+// import {
+//     LeftOutlined,
+//     RightOutlined,
+// } from "@ant-design/icons";
 
 // import * as AllIcon from "@ant-design/icons"
 import Icon from '@/components/global/Icon'
 
 import style from "./component.module.scss";
 import type { MenuProps } from "antd";
-import { Layout, Menu, ConfigProvider } from "antd";
+import { Menu } from "antd";
 import { useState } from "react";
 import { selectUserInfo } from "@store/user";
 import { useAppSelector } from "@store/hooks";
 import { toMakeTree } from '@js/utils/createTree'
-
+import { useNavigate } from "react-router-dom";
 // const { Sider } = Layout;
 
 type MenuItem = Required<MenuProps>["items"][number];
-function getItem(
-    label: React.ReactNode,
-    key: React.Key,
-    icon?: React.ReactNode,
-    children?: MenuItem[]
-): MenuItem {
-    return {
-        key,
-        icon,
-        children,
-        label,
-    } as MenuItem;
-}
+// function getItem(
+//     label: React.ReactNode,
+//     key: React.Key,
+//     icon?: React.ReactNode,
+//     children?: MenuItem[]
+// ): MenuItem {
+//     return {
+//         key,
+//         icon,
+//         children,
+//         label,
+//     } as MenuItem;
+// }
 
 function filterTreeList(list: any): any {
     const json = []
@@ -57,7 +57,8 @@ function filterTreeList(list: any): any {
 
 export default function App() {
     const userInfo = useAppSelector(selectUserInfo);
-    
+    const navigate = useNavigate();
+
     const treeList = toMakeTree(JSON.parse(JSON.stringify(userInfo?.list!)), '0')
     
     console.log(filterTreeList(treeList), treeList);
@@ -84,7 +85,7 @@ export default function App() {
 
     const menuClick: MenuProps['onSelect'] = (e) => {
         console.log(e);
-        debugger;
+        navigate(e.key)
     };
     return (
         <>
@@ -102,7 +103,6 @@ export default function App() {
                 <Menu
                     inlineCollapsed={collapsed}
                     theme="dark"
-                    defaultSelectedKeys={["1"]}
                     mode="inline"
                     items={items}
                     onSelect={menuClick}
@@ -114,9 +114,11 @@ export default function App() {
                     onClick={toggleCollapsed}
                 >
                     {collapsed ? (
-                        <LeftOutlined className="text-14px" />
+                        // <LeftOutlined className="text-14px" />
+                        <Icon icon="LeftOutlined" className='text-14px' />
                     ) : (
-                        <RightOutlined className="text-14px" />
+                        <Icon icon="RightOutlined" className='text-14px' />
+                        // <RightOutlined className="text-14px" />
                     )}
                 </div>
             </div>

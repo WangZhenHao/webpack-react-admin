@@ -56,3 +56,28 @@
     
 }
 
+
+.tagWrap {
+    height: 30px;
+    box-shadow: 0 5px 10px #dddddd4d;
+    padding: 0 5px;
+    font-size: 12px;
+    position: relative;
+    z-index: 4;
+
+    .tagActive {
+        color: #fff;
+        background: #409eff;
+
+        :global {
+            .ant-tag-close-icon {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.Content {
+    height: calc(100% - 30px);
+    overflow-y: auto;
+}

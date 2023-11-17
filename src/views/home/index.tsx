@@ -1,6 +1,8 @@
 import Hearder from './component/hearder'
 import Siderbar from './component/siderbar'
 import Tags from './component/tags'
+import { Outlet } from "react-router-dom";
+import style from "./component/component.module.scss";
 
 export default function App() {
     return <>
@@ -8,10 +10,10 @@ export default function App() {
         
         <div className='flex'>
          <Siderbar />
-         <div className='fl flex-auto'>
+         <div className='flex-auto'>
             <Tags />
-            <div>
-              content
+            <div className={style.Content}>
+              <Outlet />
             </div>
          </div>
           
