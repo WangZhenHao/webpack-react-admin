@@ -12,7 +12,7 @@ export default function App({ children }: { children: JSX.Element }) {
     }
 
     if(location.pathname === '/login' && userInfo) {
-        return <Navigate to="/" replace />
+        return <Navigate to="/overview" replace />
     }
 
     if(location.pathname === '/login' && !userInfo) {
