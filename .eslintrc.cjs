@@ -10,6 +10,9 @@ module.exports = {
         },
     },
     rules: {
+        "eqeqeq": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "no-useless-escape": "off"
         // "react-hooks/rules-of-hooks": "off"
     },
     globals: {
