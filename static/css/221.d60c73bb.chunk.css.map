@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/221.d60c73bb.chunk.css","mappings":"AACA,wBAEI,SACA,QACA,mCAHA,WAGA","sources":["views/login/index.module.scss"],"sourcesContent":["\n.loginWrap {\n    width: 320px;\n    left: 50%;\n    top: 50%;\n    transform: translate3d(-50%, -50%, 0);\n}"],"names":[],"sourceRoot":""}
