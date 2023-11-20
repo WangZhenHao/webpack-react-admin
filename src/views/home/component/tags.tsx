@@ -1,41 +1,73 @@
 import style from "./component.module.scss";
-import { Tag } from 'antd';
-import { useNavigate, useLocation } from 'react-router-dom'
+import { Tag } from "antd";
+import { useNavigate, useLocation } from "react-router-dom";
 import { selectUserInfo } from "@store/user";
 import { useAppSelector } from "@store/hooks";
+import { useState, useEffect } from "react";
 
 export default function App() {
     const userInfo = useAppSelector(selectUserInfo);
-    const href = useLocation()
-    // const [item, setIm]
-
-    // console.log(href)
-
-
-    const onCloseHanlde = () => {
-        alert(1)
-    }
+    const [breadcrumbList, setBreadcrumbList] = useState<$api.user.menuList[]>(
+        []
+    );
+    const href = useLocation();
+    const navigate = useNavigate();
 
     function List() {
-        const mapList = [];
-        const item = userInfo?.list?.find(item => item.path === href.pathname)
-        if(item) {
-            mapList.push(item)
-        }
-        
-        const onclickHandle = (item: any) => {
-            alert(item)
-        }
+        useEffect(() => {
+            const item = userInfo?.list?.find(
+                (item) => item.path === href.pathname
+            );
 
-        const tabList = mapList.map(item => <Tag key={item.path} className={`${item.path === href.pathname ? style.tagActive : ''}`} closable onClick={() => onclickHandle(item)} onClose={() => {
-            onCloseHanlde()
-        }}>{item.name}</Tag>)
-        
+            if (
+                item &&
+                breadcrumbList.findIndex(
+                    (detail) => detail.path === item.path
+                ) === -1
+            ) {
+                setBreadcrumbList([item, ...breadcrumbList]);
+            }
+        });
+
+        const onCloseHanlde = (event: React.MouseEvent<HTMLElement>,index: number) => {
+            event.preventDefault();
+            //    console.log(breadcrumbList.splice(index, 1))
+            if(breadcrumbList[index].path === href.pathname) {
+                return
+            }
+
+            setBreadcrumbList((oldValue) => {
+                return oldValue.filter((_, i) => i !== index);
+            });
+        };
+
+        const onclickHandle = (item: $api.user.menuList) => {
+            navigate(item.path);
+        };
+
+        const tabList = breadcrumbList.map((item, index) => (
+            <Tag
+                key={item.path}
+                className={`${
+                    item.path === href.pathname ? style.tagActive : ""
+                }`}
+                closeIcon
+                onClick={() => onclickHandle(item)}
+                onClose={(e) => {
+                    onCloseHanlde(e, index);
+                }}
+            >
+                {item.name}
+            </Tag>
+        ));
+
         return <>{tabList}</>;
     }
-    return <>
-        <div className={`${style.tagWrap} flex w-full items-center`}>
+    return (
+        <>
+            <div className={`${style.tagWrap} flex w-full items-center`}>
                 <List />
-        </div>
-    </>
+            </div>
+        </>
+    );
 }
