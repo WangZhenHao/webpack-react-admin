@@ -1,46 +1,91 @@
-# Getting Started with Create React App
+# React + Typescript + webpack 后台管理模板
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+参考大量的后台开源项目，发现都是花里胡哨的东西，如什么 eachart，拖拽等等
+实际上主要的功能就是`用户权限`，用户权限一般都是根据接口返回的路由列表，在本地/public/data 模拟了接口的返回
+非常真实模拟了日常开发。这样子，方便数据很轻松接入不同的后台如：Java, PHP，NodeJS 等，数据只要和模拟接口一样就可以了
 
-## Available Scripts
+非常适合接私活或者接外包的时候用
 
-In the project directory, you can run:
+在线地址：https://wangzhenhao.github.io/webpack-react-admin/
+![demo](https://raw.githubusercontent.com/WangZhenHao/webpack-react-admin/master/public/img/1.jpg)
 
-### `npm start`
+React + typeScript + webpack + antd + Tailwind 后台管理
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 目录结构
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+├─src
+|  ├─views                   页面
+|  ├─type                   全局类型定义
+|  |
+|  |
+|  ├─store                 store数据
+|  |
+|  ├─router                 路由
+|  |
+|  ├─components
+|  |     ├─global          组件
+|  ├─assets                资源
+|  |   ├─js                js目录
+|  |   | |
+|  |   | |
+|  |   ├─img                图片
+|  |   |
+|  |   ├─css              css资源
+|  |   |
+|  ├─api                   接口列表集合
+|  |
+├─public
+|   ├─data                mock数集合
+|   |  ├─roleList.json
+|   |  ├─user
+|   |  |  ├─getUserList.json
+|   |  |  └userLoginIn.json
+├─.vscode                自动格式化配置
+|    ├─extensions.json
+|    └settings.json
+├─config                webpack配置
+|
+|
+├─scripts              webpack启动命令
+```
 
-### `npm test`
+## 原子 css 类 Tailwind
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   安装 vscode 专用插件：Tailwind CSS IntelliSense
 
-### `npm run build`
+https://tailwindcss.com/docs/installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+字体颜色：
+text-color-3
+text-color-6
+...
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+字体大小：
+text-12px
+text-14px
+text-16px
+...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+背景颜色：
+bg-color-f
+bg-color-3
+bg-color-6
+...
 
-### `npm run eject`
+外边距：
+mb-10px
+mt-10px
+mb-20px
+mt-30px
+...
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+内边距：
+pb-10px
+pt-10px
+pb-20px
+pt-30px
+...
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
