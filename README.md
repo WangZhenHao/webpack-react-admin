@@ -7,7 +7,7 @@
 
 非常适合接私活或者接外包的时候用
 
-在线地址：https://wangzhenhao.github.io/webpack-react-admin/index.html
+在线地址：https://wangzhenhao.github.io/webpack-react-admin/index.html#/overview
 ![demo](https://raw.githubusercontent.com/WangZhenHao/webpack-react-admin/master/public/img/1.jpg)
 
 React + typeScript + webpack + antd + Tailwind 后台管理
