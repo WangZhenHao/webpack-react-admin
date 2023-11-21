@@ -1,12 +1,13 @@
 # React + Typescript + webpack 后台管理模板
 
+
 参考大量的后台开源项目，发现都是花里胡哨的东西，如什么 eachart，拖拽等等
 实际上主要的功能就是`用户权限`，用户权限一般都是根据接口返回的路由列表，在本地/public/data 模拟了接口的返回
 非常真实模拟了日常开发。这样子，方便数据很轻松接入不同的后台如：Java, PHP，NodeJS 等，数据只要和模拟接口一样就可以了
 
 非常适合接私活或者接外包的时候用
 
-在线地址：https://wangzhenhao.github.io/webpack-react-admin/
+在线地址：https://wangzhenhao.github.io/webpack-react-admin/index.html
 ![demo](https://raw.githubusercontent.com/WangZhenHao/webpack-react-admin/master/public/img/1.jpg)
 
 React + typeScript + webpack + antd + Tailwind 后台管理
@@ -89,3 +90,5 @@ pt-30px
 ...
 
 ```
+
+> 注意：如果报错`main.91c9195f.js:sourcemap:2 Error: Minified React error #130; visit https://reactjs.org/docs/error-decoder.html?invariant=130&args[]=undefined&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.at Lc (main.91c9195f.js:sourcemap:2:299234)` 估计是网络有问题，请求不到异步组件
