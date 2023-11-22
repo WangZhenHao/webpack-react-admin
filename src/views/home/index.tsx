@@ -10,7 +10,7 @@ export default function App() {
         
         <div className='flex'>
          <Siderbar />
-         <div className='flex-auto'>
+         <div className={`flex-1 min-w-0 ${style.contentWrap}`}>
             <Tags />
             <div className={style.Content}>
               <Outlet />

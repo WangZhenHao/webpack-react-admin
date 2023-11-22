@@ -25,6 +25,7 @@
     transition: width 0.2s linear;
     padding-bottom: 30px;
     width: 200px;
+    user-select: none;
 
     &.with80 {
         width: 80px;
@@ -78,7 +79,10 @@
     }
 }
 
-.Content {
-    height: calc(100% - 30px);
-    overflow-y: auto;
+.contentWrap {
+    height: calc(100vh - 70px);
+    .Content {
+        height: calc(100% - 30px);
+        overflow-y: auto;
+    }
 }

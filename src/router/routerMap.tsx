@@ -1,5 +1,6 @@
 import type { RouteObject } from "react-router-dom";
 import React, { Suspense } from "react";
+import { Navigate } from 'react-router-dom';
 
 import { Spin } from "antd";
 
@@ -33,6 +34,7 @@ const MenuList = React.lazy(() => import(`@views/system/menuList`));
 const RoleList = React.lazy(() => import(`@views/system/roleList`));
 
 
+
 type typeRouter = RouteObject & {
     name?: string;
     children?: typeRouter[]
@@ -44,10 +46,19 @@ const list: typeRouter[] = [
         element: lazyLoad(Login),
         name: "登录",
     },
+    // {
+    //     path: '/',
+    //     red
+    // },
     {
         path: "/",
         element: lazyLoad(Home),
+        name: '首页',
         children: [
+            {
+                path: '/',
+                element: <Navigate replace to="/overview" />,
+            },
             {
                 path: "/overview",
                 element: lazyLoad(Overview),

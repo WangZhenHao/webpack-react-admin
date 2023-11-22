@@ -80,10 +80,12 @@ export default function App() {
     const navigate = useNavigate();
 
     const [selectedKeys, setSelectedKeys] = useState<string[]>([href.pathname]);
-    
+    console.log(selectedKeys, href.pathname);
     const treeList = toMakeTree(JSON.parse(JSON.stringify(userInfo?.list!)), '0')
     
-    
+    // if(selectedKeys[0] !== href.pathname) {
+    //     setSelectedKeys([href.pathname])
+    // }
     // console.log(filterTreeList(treeList), treeList);
     // const items: MenuItem[] = [
     //     getItem("Option 1", "1", <PieChartOutlined />),
@@ -108,6 +110,7 @@ export default function App() {
         setCollapsed(!collapsed);
     };
 
+
     const menuClick: MenuProps['onSelect'] = (e) => {
         console.log(e);
         navigate(e.key)
@@ -130,6 +133,7 @@ export default function App() {
                     onSelect={menuClick}
                     defaultSelectedKeys={selectedKeys}
                     defaultOpenKeys={openKeys}
+
                 />
                 <div
                     className={`${style.iconArrow} text-color-f absolute`}
@@ -144,6 +148,7 @@ export default function App() {
                     )}
                 </div>
             </div>
+            
         </>
     );
 }
