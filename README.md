@@ -1,5 +1,6 @@
 # React + Typescript + webpack 后台管理模板
 
+Vue3模板：https://github.com/WangZhenHao/vite-vue3-admin
 
 参考大量的后台开源项目，发现都是花里胡哨的东西，如什么 eachart，拖拽等等
 实际上主要的功能就是`用户权限`，用户权限一般都是根据接口返回的路由列表，在本地/public/data 模拟了接口的返回
