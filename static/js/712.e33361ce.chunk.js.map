@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/712.e33361ce.chunk.js","mappings":"mKACe,SAASA,IACpB,OAAOC,EAAAA,EAAAA,KAAAC,EAAAA,SAAA,CAAAC,UACHF,EAAAA,EAAAA,KAAA,OAAAE,SAAK,kBAEb,C","sources":["views/overview/index.tsx"],"sourcesContent":["\nexport default function App() {\n    return <>\n        <div>预览</div>\n    </>\n}"],"names":["App","_jsx","_Fragment","children"],"sourceRoot":""}
