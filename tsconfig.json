@@ -29,7 +29,9 @@
         "@css/*": ["./src/assets/css/*"],
         "@img/*": ["./src/assets/img/*"],
         "@api/*": ["./src/api/*"],
-        "@store/*": ["./src/store/*"]
+        "@store/*": ["./src/store/*"],
+        "@components/*": ["./src/components/*"],
+        "@hooks/*": ["./src/hooks/*"]
     },
   },
   "include": [

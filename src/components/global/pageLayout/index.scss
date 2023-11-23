@@ -1,0 +1,31 @@
+.page-layout {
+    background: #fff;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    flex-basis: auto;
+    box-sizing: border-box;
+    padding: 0 10px 0;
+    border-radius: 6px;
+
+    .page-layout_header {
+        display: flex;
+        .header-block {
+            padding-top: 24px;
+            flex: 1;
+        }
+    }
+
+    .page-layout_table,
+    .page-layout_main {
+        overflow: hidden;
+        flex: 1;
+    }
+    .page-layout_footer {
+        height: 28px;
+        padding-bottom: 6px;
+        padding-top: 6px;
+    }
+}

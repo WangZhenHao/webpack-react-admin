@@ -74,6 +74,8 @@ function getWebpackAliases(options = {}) {
       '@img': path.resolve(__dirname, paths.appSrc, './assets/img'),
       '@api': path.resolve(__dirname, paths.appSrc, './api'),
       '@store': path.resolve(__dirname, paths.appSrc, './store'),
+      '@components': path.resolve(__dirname, paths.appSrc, './components'),
+      '@hooks': path.resolve(__dirname, paths.appSrc, './hooks'),
     };
   }
 }

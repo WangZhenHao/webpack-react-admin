@@ -1,4 +1,6 @@
 import { Table, Button } from "antd";
+import PageLayout from "@components/global/pageLayout";
+import PageTable from '@components/global/pageTable'
 
 export default function App() {
     const data = [
@@ -187,18 +189,12 @@ export default function App() {
         },
     ];
 
+    const table = (
+        <PageTable heightAuto table={{columns: columns, dataSource: data}}/>
+    );
     return (
         <>
-            <Table
-                size="small"
-                bordered
-                dataSource={data}
-                columns={columns}
-                rowKey={(recode) => {
-                    return String(Math.random() * 99999);
-                }}
-                pagination={false}
-            />
+            <PageLayout content={table} />
         </>
     );
 }
