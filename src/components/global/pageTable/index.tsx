@@ -2,6 +2,7 @@ import { Table } from "antd";
 import { useWindowListener } from "@/hooks/eventListener";
 import type { TableProps } from 'antd'
 import { useEffect, useRef, useState } from "react";
+import { debounce } from '@js/utils/index'
 
 
 interface typeProps {
@@ -14,7 +15,7 @@ export default function App(props: typeProps) {
     const tableProps = props.table
     const heightAuto = props.heightAuto
     const tableRef = useRef(null);
-    
+
     const [scroll, setScroll] = useState({
         scroll: props.table.scroll || {}
     })
@@ -42,7 +43,7 @@ export default function App(props: typeProps) {
             rezieHandle()
         })
 
-        useWindowListener('resize', rezieHandle)
+        useWindowListener('resize', debounce(rezieHandle, 100))
     }
     
 
