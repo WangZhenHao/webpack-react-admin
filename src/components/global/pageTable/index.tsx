@@ -53,8 +53,6 @@ export default function App(props: typeProps) {
                 <Table
                     size="small"
                     bordered
-                    dataSource={tableProps.dataSource}
-                    columns={tableProps.columns}
                     rowKey={(recode) => {
                         return String(Math.random() * 99999);
                     }}

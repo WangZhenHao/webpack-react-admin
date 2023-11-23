@@ -51,6 +51,7 @@ export default function App() {
                 className={`${
                     item.path === href.pathname ? style.tagActive : ""
                 }`}
+                style={{'cursor': "pointer"}}
                 closeIcon
                 onClick={() => onclickHandle(item)}
                 onClose={(e) => {
