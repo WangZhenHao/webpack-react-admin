@@ -38,14 +38,15 @@ export default function App(props: typeProps) {
             }
             
         }
-        
+        // debugger
         useEffect(() => {
             rezieHandle()
-        })
+        }, [])
 
         useWindowListener('resize', debounce(rezieHandle, 100))
     }
-    
+
+    // let
 
     return (
         <>
