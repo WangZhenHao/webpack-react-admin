@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkwebapck_react_admin=self.webpackChunkwebapck_react_admin||[]).push([[952],{2952:(e,a,c)=>{c.r(a),c.d(a,{default:()=>r});var n=c(184);function r(){return(0,n.jsx)(n.Fragment,{children:(0,n.jsx)("div",{children:"\u89d2\u8272"})})}}}]);
-//# sourceMappingURL=952.36cc5442.chunk.js.map
