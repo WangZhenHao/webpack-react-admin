@@ -149,7 +149,7 @@ export default function App() {
             tag: "Office",
         },
     ];
-    const columns = [
+    const columns: $table.column[] = [
         {
             title: "日期",
             key: "date",

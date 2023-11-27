@@ -8,12 +8,25 @@ interface typeProps {
     table: TableProps<any>;
     attribuate?: any;
     heightAuto?: Boolean;
+    keyAuto?: Boolean
 }
+function addKey(list: any[]) {
+    let index = 0
+    return list.map((item) => {
+        item.key = index++
 
+        return item;
+    })
+}
 export default function App(props: typeProps) {
     const tableProps = props.table;
-    const heightAuto = props.heightAuto;
+    const heightAuto = typeof props.heightAuto === 'boolean' ? props.heightAuto : true;
     const tableRef = useRef(null);
+    const keyAuto = typeof props.keyAuto === 'boolean' ? props.keyAuto : true;
+
+    if(keyAuto) {
+        props.table.dataSource = addKey(JSON.parse(JSON.stringify(props.table.dataSource)))
+    }
 
     const [scroll, setScroll] = useState({
         scroll: props.table.scroll || {},
@@ -27,7 +40,7 @@ export default function App(props: typeProps) {
             if (parentNode && tableHeader) {
                 let y =
                     parentNode!.getBoundingClientRect().height -
-                    tableHeader.getBoundingClientRect().height;
+                    tableHeader.getBoundingClientRect().height - 15;
 
                 setScroll({
                     scroll: {
@@ -54,9 +67,6 @@ export default function App(props: typeProps) {
                 <Table
                     size="small"
                     bordered
-                    rowKey={(recode) => {
-                        return String(Math.random() * 99999);
-                    }}
                     pagination={false}
                     {...tableProps}
                     {...scroll}

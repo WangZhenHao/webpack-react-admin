@@ -7,21 +7,22 @@
     height: 100%;
     flex-basis: auto;
     box-sizing: border-box;
-    padding: 0 10px 0;
+    // padding: 0 0 10px 0;
     border-radius: 6px;
 
     .page-layout_header {
         display: flex;
         .header-block {
-            padding-top: 24px;
+            padding-top: 10px;
             flex: 1;
         }
     }
 
-    .page-layout_table,
-    .page-layout_main {
+    .page-layout_table {
         overflow: hidden;
         flex: 1;
+        padding-top: 10px;
+        // padding-bottom: 4px;
     }
     .page-layout_footer {
         height: 28px;

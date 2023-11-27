@@ -1,4 +1,4 @@
-import './index.scss';
+import "./index.scss";
 
 interface SoltProps {
     header?: JSX.Element;
@@ -7,21 +7,26 @@ interface SoltProps {
 }
 
 export default function App(props: SoltProps) {
-    
-    const header = props.header ? props.header : null;
+    const header = props.header ? (
+        <div className="page-layout_header">
+            <div className="header-block">{props.header}</div>
+        </div>
+    ) : null;
 
-    const content = props.content ? props.content : null;
+    const content = props.content ? (
+        <div className="page-layout_table">{props.content}</div>
+    ) : null;
 
-    const footer = props.footer ? props.footer : null;
+    const footer = props.footer ? (
+        <div className="page-layout_footer">{props.footer}</div>
+    ) : null;
 
     return (
         <>
             <div className="page-layout">
-                <div className="page-layout_header">
-                    <div className="header-block">{header}</div>
-                </div>
-                <div className="page-layout_table">{content}</div>
-                <div className="page-layout_footer">{footer}</div>
+                {header}
+                {content}
+                {footer}
             </div>
         </>
     );
