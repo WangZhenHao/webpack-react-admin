@@ -86,6 +86,7 @@ export default forwardRef((props: typeProps, ref) => {
         if(isReqeust) {
             publicRef.getList();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     
