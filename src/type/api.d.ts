@@ -1,6 +1,12 @@
 declare namespace $api {}
 
 declare namespace $api.user {
+    interface pageParmas {
+        pageNum?: number;
+        pageSize?: number;
+        pages?: number;
+        total?: number;
+    }
     interface loginParmas {
         username: string;
         password: string;
@@ -48,6 +54,7 @@ declare namespace $api.user {
         retMsg?: string;
         /**  */
         success?: boolean;
+        page?: pageParmas
     }
     function getMenuList(
         params?: any,
@@ -70,6 +77,7 @@ declare namespace $api.user {
         retMsg?: string;
         /**  */
         success?: boolean;
+        page?: pageParmas
     }
 
     function getRoleList(): Promise<roleListResult_InVo__>;

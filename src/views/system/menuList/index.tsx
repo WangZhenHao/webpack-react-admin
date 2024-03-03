@@ -1,33 +1,39 @@
-import { getMenuList } from "@api/login";
-import { useEffect, useState } from "react";
-import PageLayout from "@components/global/pageLayout";
+// import { getMenuList } from "@api/login";
+import { useEffect, useState, useRef } from "react";
+// import PageLayout from "@components/global/pageLayout";
 import { Form, Input, Button } from "antd";
-import PageTable from "@components/global/pageTable";
+// import PageTable from "@components/global/pageTable";
+import Pages from "@components/global/pages";
+import type { typeRef } from "@components/global/pages";
 
-type typeList = Awaited<ReturnType<typeof getMenuList>>["result"];
+// type typeList = Awaited<ReturnType<typeof getMenuList>>["result"];
 
 export default function App() {
-    const [list, setList] = useState<typeList>([]);
-    useEffect(() => {
-        getMenuList().then((res) => {
-            setList(res.result);
-        });
-    }, []);
+    // const [list, setList] = useState<typeList>([]);
+    const childRef = useRef<typeRef>();
+    // useEffect(() => {
+    //     getMenuList().then((res) => {
+    //         setList(res.result);
+    //     });
+    // }, []);
 
-    const header = (
-        <>
-            <Form layout="inline">
-                <Form.Item name="note" label="菜单名称">
-                    <Input />
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary">
-                        搜索
-                    </Button>
-                </Form.Item>
-            </Form>
-        </>
-    );
+    const header = function() {
+        const onSearch = function() {
+            childRef.current?.init();
+        }
+        return (
+            <>
+                <Form layout="inline">
+                    <Form.Item name="note" label="菜单名称">
+                        <Input />
+                    </Form.Item>
+                    <Form.Item>
+                        <Button onClick={onSearch} type="primary">搜索</Button>
+                    </Form.Item>
+                </Form>
+            </>
+        );
+    }
 
     const col: $table.column[] = [
         {
@@ -57,16 +63,26 @@ export default function App() {
         },
     ];
 
-    const content = <>
-        <PageTable table={{
-            dataSource: list,
-            columns: col
-        }} />
-    </>;
-
     return (
         <>
-            <PageLayout header={header} content={content} />
+            <Pages
+                ref={childRef}
+                header={header()}
+                columns={col}
+                attribute={{ url: "/data/user/getUserList.json" }}
+            ></Pages>
         </>
     );
+    // const content = <>
+    //     <PageTable table={{
+    //         dataSource: list,
+    //         columns: col
+    //     }} />
+    // </>;
+
+    // return (
+    //     <>
+    //         <PageLayout header={header} content={content} />
+    //     </>
+    // );
 }

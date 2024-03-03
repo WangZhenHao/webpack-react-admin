@@ -32,7 +32,7 @@ const Home = React.lazy(() => import(`@views/home`));
 const Overview = React.lazy(() => import(`@views/overview`));
 const MenuList = React.lazy(() => import(`@views/system/menuList`));
 const RoleList = React.lazy(() => import(`@views/system/roleList`));
-
+const Test = React.lazy(() => import(`@views/test`));
 
 
 type typeRouter = RouteObject & {
@@ -72,6 +72,11 @@ const list: typeRouter[] = [
             {
                 path: "/system/roleList",
                 element: lazyLoad(RoleList),
+                name: '角色列表'
+            },
+            {
+                path: "/test",
+                element: lazyLoad(Test),
                 name: '角色列表'
             }
         ]

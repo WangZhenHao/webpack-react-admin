@@ -21,6 +21,7 @@ export interface respoonceRse {
     code: number;
     msg: string;
     result: any;
+    page: any
 }
 // export interface myAxiosResponse<T = any, D = any> extends AxiosResponse {
 //   config: myAxiosRequestConfig<D>;

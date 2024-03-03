@@ -23,7 +23,7 @@ export default function App(props: typeProps) {
     const heightAuto = typeof props.heightAuto === 'boolean' ? props.heightAuto : true;
     const tableRef = useRef(null);
     const keyAuto = typeof props.keyAuto === 'boolean' ? props.keyAuto : true;
-
+    
     if(keyAuto) {
         props.table.dataSource = addKey(JSON.parse(JSON.stringify(props.table.dataSource)))
     }
@@ -41,7 +41,7 @@ export default function App(props: typeProps) {
                 let y =
                     parentNode!.getBoundingClientRect().height -
                     tableHeader.getBoundingClientRect().height - 15;
-
+                
                 setScroll({
                     scroll: {
                         y,
@@ -63,7 +63,7 @@ export default function App(props: typeProps) {
 
     return (
         <>
-            <div ref={tableRef}>
+            <div ref={tableRef} className="h-full">
                 <Table
                     size="small"
                     bordered
