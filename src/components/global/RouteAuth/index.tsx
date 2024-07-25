@@ -6,6 +6,13 @@ export default function App({ children }: { children: JSX.Element }) {
     const userInfo = useAppSelector(selectUserInfo);
     const location  = useLocation()
     // let [searchParams] = useSearchParams();
+    // console.log(location, userInfo)
+
+    const routerList = userInfo?.list
+    if(routerList?.findIndex(item => item.path === location.pathname) === -1 && location.pathname != '/404') {
+        return <Navigate to="/404" replace />
+    }
+    
     // debugger
     if(!userInfo && location.pathname !== '/login') {
         return <Navigate to="/login" replace />

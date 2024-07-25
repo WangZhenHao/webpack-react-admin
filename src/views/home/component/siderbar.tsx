@@ -80,7 +80,7 @@ export default function App() {
     const navigate = useNavigate();
 
     const [selectedKeys, setSelectedKeys] = useState<string[]>([href.pathname]);
-    console.log(selectedKeys, href.pathname);
+    // console.log(selectedKeys, href.pathname);
     const treeList = toMakeTree(JSON.parse(JSON.stringify(userInfo?.list!)), '0')
     
     // if(selectedKeys[0] !== href.pathname) {
@@ -112,7 +112,7 @@ export default function App() {
 
 
     const menuClick: MenuProps['onSelect'] = (e) => {
-        console.log(e);
+        // console.log(e);
         navigate(e.key)
         setSelectedKeys([e.key])
     };

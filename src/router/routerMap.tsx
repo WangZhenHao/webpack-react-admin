@@ -32,6 +32,7 @@ const Home = React.lazy(() => import(`@views/home`));
 const Overview = React.lazy(() => import(`@views/overview`));
 const MenuList = React.lazy(() => import(`@views/system/menuList`));
 const RoleList = React.lazy(() => import(`@views/system/roleList`));
+const Lose = React.lazy(() => import(`@views/system/404`));
 const Test = React.lazy(() => import(`@views/test`));
 
 
@@ -58,6 +59,11 @@ const list: typeRouter[] = [
             {
                 path: '/',
                 element: <Navigate replace to="/overview" />,
+            },
+            {
+                path: '/404',
+                element: lazyLoad(Lose),
+                name: '404'
             },
             {
                 path: "/overview",
