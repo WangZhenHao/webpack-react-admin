@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/662.f83614c6.chunk.js","mappings":"oKAAA,MAMA,EANYA,KAEJC,EAAAA,EAAAA,KAAA,MAAIC,UAAU,OAAMC,SAAC,O","sources":["views/system/404/index.tsx"],"sourcesContent":["const App = () => {\n    return ( \n        <h1 className=\"p-10\">404</h1>\n     );\n}\n \nexport default App;"],"names":["App","_jsx","className","children"],"sourceRoot":""}
