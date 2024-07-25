@@ -10,6 +10,7 @@ export default function App({ children }: { children: JSX.Element }) {
 
     const routerList = userInfo?.list
     if(routerList?.findIndex(item => item.path === location.pathname) === -1 && location.pathname != '/404') {
+        debugger
         return <Navigate to="/404" replace />
     }
     

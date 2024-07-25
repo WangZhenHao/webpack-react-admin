@@ -36,6 +36,14 @@
                 "path": "/overview",
                 "name": "概况",
                 "sort": "1"
+            },
+            {
+                "id": "5",
+                "parentId": "0",
+                "path": "/login",
+                "name": "登录",
+                "sort": "1",
+                "isShow": false
             }
         ]
     }

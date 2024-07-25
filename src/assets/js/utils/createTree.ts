@@ -3,12 +3,13 @@ interface typeTree {
     id: string;
     child?: any[];
     sort?: any;
+    isShow: boolean
 }
 export function toMakeTree<T extends typeTree>(data: T[], pid: string): T[] {
     let arr = [];
     pid = pid || '0';
     for (let item of data) {
-        if (item.parentId === pid) {
+        if (item.parentId === pid && item.isShow !== false) {
             let child = toMakeTree(data, item.id);
             if (child.length > 0) {
                 item['child'] = child;
