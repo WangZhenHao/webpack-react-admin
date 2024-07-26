@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkwebapck_react_admin=self.webpackChunkwebapck_react_admin||[]).push([[47],{2047:(a,e,c)=>{c.r(e),c.d(e,{default:()=>k});var s=c(184);const k=()=>(0,s.jsx)("h1",{className:"p-10",children:"\u65e0\u6743\u9650\uff1a 403"})}}]);
+//# sourceMappingURL=47.e631ed46.chunk.js.map
