@@ -9,8 +9,8 @@ export default function App({ children }: { children: JSX.Element }) {
     // console.log(location, userInfo)
 
     const routerList = userInfo?.list
-    if(routerList?.findIndex(item => item.path === location.pathname) === -1 && location.pathname != '/404') {
-        return <Navigate to="/404" replace />
+    if(routerList?.findIndex(item => item.path === location.pathname) === -1 && location.pathname != '/403') {
+        return <Navigate to="/403" replace />
     }
     
     // debugger

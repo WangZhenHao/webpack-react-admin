@@ -44,6 +44,38 @@
                 "name": "登录",
                 "sort": "1",
                 "isShow": false
+            },
+            {
+                "id": "6",
+                "parentId": "0",
+                "path": "",
+                "name": "运营操作",
+                "sort": "1",
+                "icon": "ClusterOutlined"
+            },
+            {
+                "id": "7",
+                "parentId": "6",
+                "path": "/operation/list",
+                "name": "商品列表",
+                "sort": "1",
+                "icon": ""
+            },
+            {
+                "id": "8",
+                "parentId": "6",
+                "path": "/operation/areaList",
+                "name": "区域列表",
+                "sort": "1",
+                "icon": ""
+            },
+            {
+                "id": "9",
+                "parentId": "6",
+                "path": "/operation/bannerList",
+                "name": "广告图管理",
+                "sort": "1",
+                "icon": ""
             }
         ]
     }

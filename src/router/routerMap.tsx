@@ -33,6 +33,7 @@ const Overview = React.lazy(() => import(`@views/overview`));
 const MenuList = React.lazy(() => import(`@views/system/menuList`));
 const RoleList = React.lazy(() => import(`@views/system/roleList`));
 const Lose = React.lazy(() => import(`@views/system/404`));
+const Frobidden = React.lazy(() => import(`@views/system/403`));
 const Test = React.lazy(() => import(`@views/test`));
 
 
@@ -46,6 +47,11 @@ const list: typeRouter[] = [
         path: "/login",
         element: lazyLoad(Login),
         name: "登录",
+    },
+    {
+        path: '*',
+        element: lazyLoad(Lose),
+        name: '404'
     },
     // {
     //     path: '/',
@@ -61,9 +67,9 @@ const list: typeRouter[] = [
                 element: <Navigate replace to="/overview" />,
             },
             {
-                path: '/404',
-                element: lazyLoad(Lose),
-                name: '404'
+                path: '/403',
+                element: lazyLoad(Frobidden),
+                name: '403'
             },
             {
                 path: "/overview",
