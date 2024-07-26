@@ -10,7 +10,7 @@
             {
                 "id": "1",
                 "parentId": "0",
-                "sort": "2",
+                "sort": "0",
                 "path": "",
                 "name": "系统管理",
                 "icon": "PieChartOutlined"
@@ -35,7 +35,7 @@
                 "icon": "SlidersOutlined",
                 "path": "/overview",
                 "name": "概况",
-                "sort": "1"
+                "sort": "-1"
             },
             {
                 "id": "5",
