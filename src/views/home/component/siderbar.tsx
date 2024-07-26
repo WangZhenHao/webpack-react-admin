@@ -56,20 +56,32 @@ function filterTreeList(list: any): any {
 }
 
 function findOpenKey(path: string, list: any, parenList?: any) {
-    let openKeys = ''
+    let openKeys: string[] = []
     
-    for(let item of list) {
+    function expandAll(listArr: any) {
+        for(let item of listArr) {
 
-        if(item.children && item.children.length) {
-            openKeys =  findOpenKey(path, item.children, item)
-            return openKeys;
-        } 
-
-        if(item.key === path) {
-            return parenList ? parenList.key : item.key
-
+            if(item.children && item.children.length) {
+                openKeys.push(item.key)
+                expandAll(item.children)
+                
+            } 
         }
-    }
+    }   
+    expandAll(list)
+    // for(let item of list) {
+
+    //     if(item.children && item.children.length) {
+    //         openKeys =  findOpenKey(path, item.children, item)
+    //         return openKeys;
+    //     } 
+        
+    //     if(item.key === path) {
+            
+    //         return parenList ? parenList.key : item.key
+
+    //     }
+    // }
     return openKeys;
 }
 
@@ -103,7 +115,8 @@ export default function App() {
     // ];
     const items = filterTreeList(treeList) as MenuItem[]
 
-    const [openKeys] = useState<string[]>([findOpenKey(href.pathname, items)]);
+    const [openKeys] = useState<string[]>(findOpenKey(href.pathname, items));
+    console.log(openKeys)
     const [collapsed, setCollapsed] = useState(false);
 
     const toggleCollapsed = () => {
@@ -136,7 +149,7 @@ export default function App() {
 
                 />
                 <div
-                    className={`${style.iconArrow} text-color-f absolute`}
+                    className={`${style.iconArrow} text-color-f fixed`}
                     onClick={toggleCollapsed}
                 >
                     {collapsed ? (
