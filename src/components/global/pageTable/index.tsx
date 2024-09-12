@@ -32,7 +32,7 @@ export default function App(props: typeProps) {
         scroll: props.table.scroll || {},
     });
 
-    const rezieHandle = function () {
+    const rezieHandle = function (props: typeProps) {
         if (heightAuto && !props.table.scroll?.y) {
             const parentNode = (tableRef.current! as Element).parentElement;
             const tableHeader = parentNode?.querySelector(".ant-table-thead");
@@ -54,7 +54,7 @@ export default function App(props: typeProps) {
     // debugger
 
     useEffect(() => {
-        rezieHandle();
+        rezieHandle(props);
     }, [props]);
 
     useWindowListener("resize", debounce(rezieHandle, 100));
