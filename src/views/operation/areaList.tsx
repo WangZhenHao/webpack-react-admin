@@ -5,10 +5,50 @@ import { debounce } from "@/assets/js/utils";
 
 // 参考案例： https://lbs.qq.com/demoList/glAPI#%E4%B8%AA%E6%80%A7%E5%8C%96%E5%9C%B0%E5%9B%BE
 // https://lbs.qq.com/webDemoCenter/glAPI/glEditor/toolDraw
+
+function convertPath(arrMap: any[]) {
+    const simplePath: any = []
+
+    arrMap.forEach(item => {
+        simplePath.push(
+            new TMap.LatLng(item.lat, item.lng)
+        )
+    })
+
+    return simplePath
+}
+
 const AreaCreate = () => {
     var map: any;
     useEffect(() => {
         function initMap() {
+            const arrMap = [
+                {
+                    "lat": 39.987999355721286,
+                    "lng": 116.30677365172414,
+                    "height": 0
+                },
+                {
+                    "lat": 39.984794332407844,
+                    "lng": 116.30675220010926,
+                    "height": 0
+                },
+                {
+                    "lat": 39.98446560354934,
+                    "lng": 116.31949434581838,
+                    "height": 0
+                },
+                {
+                    "lat": 39.989018356830364,
+                    "lng": 116.3200735327082,
+                    "height": 0
+                },
+                {
+                    "lat": 39.98959359291806,
+                    "lng": 116.30763170854334,
+                    "height": 0
+                }
+            ]
             map = new TMap.Map("container", {
                 zoom: 16, // 设置地图缩放级别
                 center: new TMap.LatLng(39.984104, 116.307503), // 设置地图中心点坐标
@@ -39,6 +79,29 @@ const AreaCreate = () => {
                 editor.setActionMode(TMap.tools.constants.EDITOR_ACTION.INTERACT)
                 editor.enable()
             });
+
+            var simplePath = convertPath(arrMap)
+
+            editor.addOverlay({
+                id: 'p',
+                name: '编辑点',
+                overlay: new TMap.MultiPolygon({
+                    map,
+                    styles: {
+                        highlight: new TMap.PolygonStyle({
+                            color: 'rgba(255, 255, 0, 0.6)'
+                        })
+                    },
+                    geometries: [
+                        {
+                            paths: simplePath
+                        }
+                    ]
+                })
+            })
+
+            editor.setActionMode(TMap.tools.constants.EDITOR_ACTION.INTERACT)
+            editor.enable()
         }
         initMap();
         return () => {
