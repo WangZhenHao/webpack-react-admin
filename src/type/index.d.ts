@@ -8,4 +8,5 @@
 import type { typeTools } from '@js/globalFn';
 declare global {
     var $tools: typeTools;
+    var TMap: any
 }

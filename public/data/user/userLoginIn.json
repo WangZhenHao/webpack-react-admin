@@ -54,18 +54,10 @@
                 "icon": "ClusterOutlined"
             },
             {
-                "id": "7",
-                "parentId": "6",
-                "path": "/operation/list",
-                "name": "商品列表",
-                "sort": "1",
-                "icon": ""
-            },
-            {
                 "id": "8",
                 "parentId": "6",
                 "path": "/operation/areaList",
-                "name": "区域列表",
+                "name": "区域划分",
                 "sort": "1",
                 "icon": ""
             },

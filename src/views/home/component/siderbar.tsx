@@ -116,7 +116,7 @@ export default function App() {
     const items = filterTreeList(treeList) as MenuItem[]
 
     const [openKeys] = useState<string[]>(findOpenKey(href.pathname, items));
-    console.log(openKeys)
+    // console.log(openKeys)
     const [collapsed, setCollapsed] = useState(false);
 
     const toggleCollapsed = () => {

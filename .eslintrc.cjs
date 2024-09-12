@@ -17,7 +17,8 @@ module.exports = {
         // "react-hooks/exhaustive-deps": "off"
     },
     globals: {
-        $tools: true
+        $tools: true,
+        TMap: true
     }
    
 };

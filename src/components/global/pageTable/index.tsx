@@ -55,8 +55,7 @@ export default function App(props: typeProps) {
 
     useEffect(() => {
         rezieHandle();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [props]);
 
     useWindowListener("resize", debounce(rezieHandle, 100));
     // let

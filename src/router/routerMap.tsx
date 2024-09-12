@@ -36,6 +36,7 @@ const Lose = React.lazy(() => import(`@views/system/404`));
 const Frobidden = React.lazy(() => import(`@views/system/403`));
 const Test = React.lazy(() => import(`@views/test`));
 
+const AreaList = React.lazy(() => import(`@views/operation/areaList`));
 
 type typeRouter = RouteObject & {
     name?: string;
@@ -90,6 +91,11 @@ const list: typeRouter[] = [
                 path: "/test",
                 element: lazyLoad(Test),
                 name: '角色列表'
+            },
+            {
+                path: "/operation/areaList",
+                element: lazyLoad(AreaList),
+                name: '区域划分'
             }
         ]
     },
