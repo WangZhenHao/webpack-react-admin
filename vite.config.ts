@@ -50,9 +50,25 @@ export default defineConfig(({ mode }) => {
     }
   }
 
+  // Base path configuration
+  const getBasePath = () => {
+    // 优先使用环境变量配置
+    if (env.VITE_BASE_PATH) {
+      return env.VITE_BASE_PATH
+    }
+
+    // Development mode uses '/'
+    if (mode === 'development') {
+      return '/'
+    }
+
+    // Default: use /webpack-react-admin/ for other environments
+    return '/webpack-react-admin/'
+  }
+
   return {
     // Base path
-    base: '/',
+    base: getBasePath(),
 
     // Development server settings
     server: mode === 'development' ? serverConfig : {},
