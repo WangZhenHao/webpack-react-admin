@@ -37,7 +37,7 @@ export default defineConfig(({ mode }) => {
 
   // Build configuration based on mode
   const buildConfig = {
-    outDir: 'build',
+    outDir: 'dist',
     assetsDir: 'static',
     sourcemap: mode === 'development',
     minify: mode === 'production',
