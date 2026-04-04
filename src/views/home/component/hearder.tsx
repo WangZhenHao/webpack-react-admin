@@ -1,7 +1,7 @@
 import { DownOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown, Modal } from "antd";
-import admin from "@assets/admin.png";
+import admin from "@assets/img/admin.png";
 
 import style from "./component.module.scss";
 import { loginOut } from '@store/user'

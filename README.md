@@ -1,4 +1,4 @@
-# React + Typescript + webpack 后台管理模板
+# React + Typescript + Vite 后台管理模板
 
 Vue3模板：https://github.com/WangZhenHao/vite-vue3-admin
 

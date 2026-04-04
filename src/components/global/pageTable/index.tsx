@@ -33,7 +33,7 @@ export default function App(props: typeProps) {
     });
 
     const rezieHandle = function (props: typeProps) {
-        if (heightAuto && !props.table.scroll?.y) {
+        if (heightAuto && !props.table?.scroll?.y) {
             const parentNode = (tableRef.current! as Element).parentElement;
             const tableHeader = parentNode?.querySelector(".ant-table-thead");
 
@@ -45,7 +45,7 @@ export default function App(props: typeProps) {
                 setScroll({
                     scroll: {
                         y,
-                        x: props.table.scroll?.x,
+                        x: props.table?.scroll?.x,
                     },
                 });
             }
