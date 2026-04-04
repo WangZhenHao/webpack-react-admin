@@ -2,7 +2,7 @@ import { request, CancelToken } from './request';
 import type { optionsParams, apiServer, respoonceRse } from './axios.type';
 
 const $apiServer: apiServer = {
-    baseURL: `${process.env.REACT_APP_API}`,
+    baseURL: import.meta.env.VITE_API,
 };
 
 function isAbsoluteURL(url: string) {

@@ -2,7 +2,7 @@ import { Table } from "antd";
 import { useWindowListener } from "@/hooks/eventListener";
 import type { TableProps } from "antd";
 import { useEffect, useRef, useState } from "react";
-import { debounce } from "@js/utils/index";
+import { debounce } from "@assets/js/utils/index";
 
 interface typeProps {
     table: TableProps<any>;

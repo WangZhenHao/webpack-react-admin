@@ -2,7 +2,7 @@ import React from "react";
 import PageLayout from "../pageLayout";
 import PageTable from "../pageTable";
 // import { useEffect, useState } from "react";
-import { ipost, iget } from "@js/axios";
+import { ipost, iget } from "@assets/js/axios";
 import {
     forwardRef,
     useImperativeHandle,

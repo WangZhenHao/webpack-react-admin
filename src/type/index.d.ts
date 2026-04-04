@@ -5,7 +5,7 @@
 // }
 
 // declare function test1<T>(arr: T, name1: keyof T, name2: keyof T): T;
-import type { typeTools } from '@js/globalFn';
+import type { typeTools } from '@assets/js/globalFn';
 declare global {
     var $tools: typeTools;
     var TMap: any

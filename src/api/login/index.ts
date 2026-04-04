@@ -1,4 +1,4 @@
-import { ipost, iget } from '@js/axios';
+import { ipost, iget } from '@assets/js/axios';
 
 export const userLoginIn = function (data, option) {
     return iget('/data/user/userLoginIn.json', data, option);

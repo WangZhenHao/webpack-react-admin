@@ -70,7 +70,7 @@ function requestError(code: number): string {
 
 const CancelToken = axios.CancelToken;
 const reqConfig = {
-    baseURL: '/', // process.env.baseURL || process.env.apiUrl || ""
+    baseURL: '/', // Vite uses proxy configuration in vite.config.ts
     timeout: 40 * 1000, // Timeout
 };
 

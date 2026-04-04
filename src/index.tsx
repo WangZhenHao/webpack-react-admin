@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "@css/common.css";
-import "@js/globalFn";
+import "@assets/css/common.css";
+import "@assets/js/globalFn";
 
 import "./index.css";
 // import App from './App';

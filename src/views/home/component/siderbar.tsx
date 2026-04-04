@@ -12,7 +12,7 @@ import { Menu } from "antd";
 import { useState, useEffect } from "react";
 import { selectUserInfo } from "@store/user";
 import { useAppSelector } from "@store/hooks";
-import { toMakeTree } from '@js/utils/createTree'
+import { toMakeTree } from '@assets/js/utils/createTree'
 import { useNavigate, useLocation } from "react-router-dom";
 // const { Sider } = Layout;
 

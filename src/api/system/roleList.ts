@@ -1,4 +1,4 @@
-import { ipost, iget } from '@js/axios';
+import { ipost, iget } from '@assets/js/axios';
 
 export const getRoleList = function () {
     return iget('/data/roleList.json');

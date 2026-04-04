@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -13,8 +13,8 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -22,16 +22,15 @@
     "noImplicitThis": false,
     "baseUrl": "./",
     "paths": {
-        "@/*": ["./src/*"],
-        "@views/*": ["./src/views/*"],
-        "@router/*": ["./src/router/*"],
-        "@js/*": ["./src/assets/js/*"],
-        "@css/*": ["./src/assets/css/*"],
-        "@img/*": ["./src/assets/img/*"],
-        "@api/*": ["./src/api/*"],
-        "@store/*": ["./src/store/*"],
-        "@components/*": ["./src/components/*"],
-        "@hooks/*": ["./src/hooks/*"]
+      "@/*": ["./src/*"],
+      "@views/*": ["./src/views/*"],
+      "@components/*": ["./src/components/*"],
+      "@store/*": ["./src/store/*"],
+      "@api/*": ["./src/api/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@type/*": ["./src/type/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@router/*": ["./src/router/*"]
     },
   },
   "include": [

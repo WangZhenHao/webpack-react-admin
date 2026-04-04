@@ -70,7 +70,7 @@ function getWebpackAliases(options = {}) {
       '@css': path.resolve(__dirname, paths.appSrc, './assets/css'),
       '@views':  path.resolve(__dirname, paths.appSrc, './views'),
       '@router': path.resolve(__dirname, paths.appSrc, './router'),
-      '@js': path.resolve(__dirname, paths.appSrc, './assets/js'),
+      '@assets/js': path.resolve(__dirname, paths.appSrc, './assets/js'),
       '@img': path.resolve(__dirname, paths.appSrc, './assets/img'),
       '@api': path.resolve(__dirname, paths.appSrc, './api'),
       '@store': path.resolve(__dirname, paths.appSrc, './store'),
